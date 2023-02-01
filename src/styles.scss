@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "app/scss-moduls/colors";
+@import "app/scss-moduls/mixins";
+
+body{
+    @include set-content-center();
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: $background-color;
+}
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
