@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-game',
@@ -7,18 +7,35 @@ import { Component } from '@angular/core';
 })
 export class GameComponent {
 
-  protected board: number[][] = this.getTwoDimensionArrayFilledZeros() ;
+  protected board: string[][] = [];
+  @Input() playerOneIcon: string = "";
+  @Input() playerTwoIcon: string = "";
+  protected nextIcon: string = "";
 
-  constructor(){
-    
-   
+  constructor() {
+
+
+  }
+  ngOnInit() {
+    this.initGame();
   }
 
-  private getTwoDimensionArrayFilledZeros(): number[][]{
-    let arr = new Array<Array<number>>;
+  private initGame(): void {
+    this.nextIcon = this.playerOneIcon;
+    this.board = this.getTwoDimensionArrayFilledZeros()
+  }
+
+  private getTwoDimensionArrayFilledZeros(): string[][] {
+    let arr = new Array<Array<string>>;
     for (let i = 0; i < 3; i++) {
-      arr.push(new Array<number>(3).fill(0))
+      arr.push(new Array<string>(3).fill(""))
     }
     return arr;
   }
+
+  public changeCell(i: number, j: number): void {
+    this.board[i][j] = this.nextIcon;
+    this.nextIcon = this.nextIcon === this.playerOneIcon ? this.playerTwoIcon : this.playerOneIcon;
+  }
+
 }

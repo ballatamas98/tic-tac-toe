@@ -1,1 +1,5 @@
-<app-game></app-game>
+<div class="row">
+<div class="col "><app-icon-chooser name="Player 1"  (choosenIcon)="selectedPlayerIcon($event, 1)"></app-icon-chooser></div>
+<div class="col"><app-game [playerOneIcon]="playerOneIcon" [playerTwoIcon]="playerTwoIcon"></app-game></div>
+<div class="col"><app-icon-chooser name="Player 2" (choosenIcon)="selectedPlayerIcon($event, 2)"></app-icon-chooser></div>
+</div>

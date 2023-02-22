@@ -1,8 +1,11 @@
+
 <div class="game-board-wrapper">
+    <h1 class="text-center" *ngIf="(nextIcon === playerOneIcon)">Player 1</h1>
+    <h1 class="text-center" *ngIf="(nextIcon === playerTwoIcon)">Player 2</h1>
     <table class="game-bord">
-        <tr   *ngFor="let row of board">
-            <td  *ngFor="let cell of row">
-                <div class="cell">{{cell}}</div>
+        <tr *ngFor="let row of board; let i = index">
+            <td  *ngFor="let cell of row; let j = index">
+                <div class="cell" (click)="changeCell(i, j)">{{cell}}</div>
             </td>
         </tr>
     </table>
