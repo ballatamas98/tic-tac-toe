@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class IconService {
 
-  private iconList: Array<any> = ["❌", "⭕", "💩", "🐺"];
+  private iconList: Array<string> = ["❌", "⭕", "💩", "🐺", "💀", "🔥", "😊"];
   public playerOneIcon: BehaviorSubject<string> = new BehaviorSubject<string>(this.iconList[0]);
   public playerTwoIcon: BehaviorSubject<string> = new BehaviorSubject<string>(this.iconList[1]);
 
