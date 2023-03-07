@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { GameComponent } from './components/game/game.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IconChooserComponent } from './components/icon-chooser/icon-chooser.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { IconChooserComponent } from './components/icon-chooser/icon-chooser.com
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
