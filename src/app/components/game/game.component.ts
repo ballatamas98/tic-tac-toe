@@ -53,10 +53,10 @@ export class GameComponent implements OnInit, DoCheck {
   }
 
   changeCell(i: number, j: number): void {
-    
+    if (this.board[i][j] === "") {
       this.board[i][j] = this.nextIcon;
       this.nextIcon = this.nextIcon === this.playerOneIcon ? this.playerTwoIcon : this.playerOneIcon;
-
+    }
   }
 
   private lookingForWinner(): void {
