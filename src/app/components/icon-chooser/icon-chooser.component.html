@@ -1,7 +1,6 @@
 <h2>{{name}}</h2>
-<select #icon (change)="iconChoosen(icon.value)">
-  <option value="❌">❌</option>
-  <option value="⭕">⭕</option>
-  <option value="💩">💩</option>
-  <option value="🐺">🐺</option>
+<select #icon (change)="changeIcon(icon.value)">
+  <option *ngFor="let iconOption of iconlist" value="{{iconOption}}">
+    {{iconOption}}
+  </option>
 </select>
